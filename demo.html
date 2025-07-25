@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AIで色補正体験</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <h1>📸 AIで色補正体験</h1>
+
+  <label for="sample-select">画像を選んでください：</label>
+  <select id="sample-select" onchange="updateOriginalImage()">
+    <option value="sample1">サンプル1</option>
+    <option value="sample2">サンプル2</option>
+		<option value="sample3">サンプル3</option>
+		<option value="sample4">サンプル4</option>
+		<option value="sample5">サンプル5</option>
+  </select>
+
+	<div id="image-area" style="margin-top: 20px;">
+		<img src="images/sample1_original.jpg" id="demo-image" width="400" />
+		<p id="image-caption">補正前の画像</p>
+
+		<!-- 可視化画像（処理中にだけ表示） -->
+		<img src="" id="visualization-image" width="200" style="display: none; margin-top: 10px;" />
+	</div>
+
+
+  <button onclick="startCorrection()">AIに補正してもらう</button>
+
+  <div id="progress-container" style="display: none; margin: 20px auto; width: 60%; background: #eee; border-radius: 8px; overflow: hidden;">
+    <div id="progress-bar" style="height: 20px; width: 0%; background: #4caf50; transition: width 0.1s;"></div>
+  </div>
+
+  <div id="extra-images" style="display: none; margin-top: 30px;">
+    <h3>補正結果とAIのビジュアライズ</h3>
+    <div style="display: flex; gap: 10px; justify-content: center;">
+      <div>
+        <img id="corrected-image" width="250"/>
+        <p>補正後</p>
+      </div>
+      <div>
+        <img id="visualization-image" width="250"/>
+        <p>照明推定の可視化</p>
+      </div>
+    </div>
+  </div>
+
+  <nav style="margin-top: 40px;">
+    <a href="index.html">← ホームに戻る</a>
+  </nav>
+</body>
+</html>

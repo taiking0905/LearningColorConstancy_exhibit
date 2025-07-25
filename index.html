@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AIで色を本来の姿へ</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <h1>AIで色を本来の姿へ</h1>
+
+  <p>このサイトでは、照明によって狂った画像の色を、AIで本来の色に戻す研究を紹介しています。</p>
+
+  <nav>
+    <a href="demo.html">▶ 体験してみる</a>
+    <a href="survey.html">📝 アンケートに答える</a>
+  </nav>
+
+  <h1>詳しく理解する</h1>
+
+  <h2 onclick="toggleSection(this)">色恒常性って？</h2>
+  <div class="section-content">
+    <p>私たちの目は、照明が変わっても物の“本当の色”を見分けられます。</p>
+    <p>これは、脳が自動的に色を補正してくれているからです。</p>
+    <p>この性質を「色恒常性」と言います。</p>
+    <img src="images/example_colorconstancy.png" alt="色恒常性の図" width="800" />
+  </div>
+
+  <h2 onclick="toggleSection(this)">なぜ必要なの？</h2>
+  <div class="section-content">
+    <p>カメラには人間のように、色を補正してくれる脳がありません。</p>
+    <p>そのため、照明によって色が狂いやすく、実際とは違って見えてしまうことがあります。</p>
+    <p>特に医療・農業・ロボットビジョンなど、<strong>正確な色の判断が重要な分野</strong>では、この問題は深刻です。</p>
+    <ol>
+      <li>植物の健康状態を写真から判断する。</li>
+      <li>成熟した果実を見分ける。</li>
+      <li>商品画像（ネットショップなど）の見た目を統一する。</li>
+      <li>自動運転で道路標識や信号の色を正しく認識する。</li>
+    </ol>
+  </div>
+
+  <h2 onclick="toggleSection(this)">なぜAIを使うの？</h2>
+  <div class="section-content">
+    <ol>
+      <li>
+        <p><strong>従来のアルゴリズムでは限界がある。</strong></p>
+        <p>AIを使うことで、より高精度な照明推定が可能になります。</p>
+      </li>
+      <li>
+        <p><strong>AIなら複雑な状況にも対応できる。</strong></p>
+        <p>ルールを定めずに、データから柔軟に学習できるのが強みです。</p>
+      </li>
+      <li>
+        <p><strong>人間の色恒常性と似ている。</strong></p>
+        <p>文脈や知識から「こう見えるはず」と推論する処理は、AIの得意分野です。</p>
+      </li>
+    </ol>
+  </div>
+
+  <h2 onclick="toggleSection(this)">AIはどうやって“本当の色”を知るの？</h2>
+  <div class="section-content">
+    <ol>
+      <li>
+        <p><strong>照明の色を推定する</strong>。</p>
+        <p>画像全体から、青みがかっているなどの傾向を検出します。</p>
+      </li>
+      <li>
+        <p><strong>中立な色（グレイッシュな白）へ変換する</strong>。</p>
+        <p>均等なRGB比の光に変換して補正の準備をします。</p>
+      </li>
+      <li>
+        <p><strong>画像全体に補正を適用</strong>。</p>
+        <p>照明の影響を全ピクセルに均等に補正して自然な見た目にします。</p>
+      </li>
+    </ol>
+    <p><strong>まとめ：<br></strong>AIは、画像の光の色を見抜いてその影響を取り除くことで、「本来の色」を再現します。</p>
+  </div>
+
+  <h2 onclick="toggleSection(this)">学習の流れ（簡単に）</h2>
+  <div class="section-content">
+    <ol>
+      <li>いろいろな照明条件の画像を集める。</li>
+      <li>それぞれの画像の「本当の照明色」の正解を与える。</li>
+      <li>AIがパターンを学習する。</li>
+      <li>新しい画像に対しても照明を推定できるようになる。</li>
+    </ol>
+  </div>
+</body>
+</html>

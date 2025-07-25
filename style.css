@@ -1,0 +1,84 @@
+/* ベースのフォント設定 */
+body {
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+  font-size: 20px;              /* 大きめで見やすく */
+  line-height: 1.2;             /* 行間も広げると読みやすい */
+  color: #333;
+  background-color: #fff;
+  padding: 1em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ヘッダー */
+h1 {
+  font-size: 2em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.4em;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  padding: 0.5em;
+  border-left: 4px solid #888;
+  margin-top: 1.5em;
+}
+
+h2:hover {
+  background-color: #e0e0e0;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+p, li {
+  margin-bottom: 0.8em;
+}
+
+/* ナビゲーション */
+nav {
+  margin: 1.5em 0;
+}
+
+nav a {
+  display: inline-block;
+  margin-right: 1em;
+  text-decoration: none;
+  background-color: #007acc;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #005fa3;
+}
+
+/* 折りたたみセクション */
+.section-content {
+  display: none;
+  margin-left: 1em;
+}
+
+/* 画像 */
+img {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+/* リスト */
+ol {
+  padding-left: 1.5em;
+}
+
+strong {
+  font-weight: bold;
+}
