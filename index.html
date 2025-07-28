@@ -8,9 +8,9 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <h1>AIで色を本来の姿へ</h1>
-
-  <p>このサイトでは、照明によって狂った画像の色を、AIで本来の色に戻す研究を紹介しています。</p>
+  <h1>AIが歪んだ色を正しく直す</h1>
+  <p>照明の影響で狂った画像の色を、AIが自動で補正し、本来の色へと近づけます。</p>
+  <p>人間が持つ<strong>色恒常性</strong>の仕組みをAIに再現し、機械が“正しい色”を理解できるようにする研究です。</p>
 
   <nav>
     <a href="demo.html">▶ 体験してみる</a>
@@ -27,18 +27,24 @@
     <img src="images/example_colorconstancy.png" alt="色恒常性の図" width="800" />
   </div>
 
-  <h2 onclick="toggleSection(this)">なぜ必要なの？</h2>
-  <div class="section-content">
-    <p>カメラには人間のように、色を補正してくれる脳がありません。</p>
-    <p>そのため、照明によって色が狂いやすく、実際とは違って見えてしまうことがあります。</p>
-    <p>特に医療・農業・ロボットビジョンなど、<strong>正確な色の判断が重要な分野</strong>では、この問題は深刻です。</p>
-    <ol>
-      <li>植物の健康状態を写真から判断する。</li>
-      <li>成熟した果実を見分ける。</li>
-      <li>商品画像（ネットショップなど）の見た目を統一する。</li>
-      <li>自動運転で道路標識や信号の色を正しく認識する。</li>
-    </ol>
-  </div>
+<h2 onclick="toggleSection(this)">なぜ必要なの？</h2>
+<div class="section-content">
+  <p><strong>このトマト、熟していると思いますか？</strong></p>
+  <p>下の画像は、黄色い照明の下で撮影されたトマトです。左側にはその一部の色（RGB値）が表示されています。</p>
+  <p><strong>この左側の色だけを見て、熟しているかどうかを判断するのはとても難しいですよね。</strong></p>
+  <p>実際、カメラや機械はこのような「照明の影響を受けた状態」のままで判断していることが多く、誤った判断につながってしまいます。</p>
+  
+  <img src="images/need_right_colours.png" alt="正しい色の必要性" width="800"/>
+
+  <p style="margin-top: 1em;">こうした問題は、<strong>色の正確な判断が必要な現場</strong>で特に深刻です。</p>
+  <ul>
+    <li>熟した果実を正確に見分ける（選別・流通）</li>
+    <li>植物の健康状態を写真から判断する（農業）</li>
+    <li>商品画像の色を統一する（ネットショップ）</li>
+    <li>自動運転で道路標識や信号の色を正しく認識する（ロボットビジョン）</li>
+  </ul>
+</div>
+
 
   <h2 onclick="toggleSection(this)">なぜAIを使うの？</h2>
   <div class="section-content">
