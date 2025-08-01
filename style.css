@@ -1,22 +1,23 @@
-/* ベースのフォント設定 */
+/* ベースフォントとレイアウト */
 body {
   font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
-  font-size: 20px;              /* 大きめで見やすく */
-  line-height: 1.2;             /* 行間も広げると読みやすい */
+  font-size: 20px;
+  line-height: 1.5;
   color: #333;
   background-color: #fff;
   padding: 1em;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* ヘッダー */
+/* タイトル */
 h1 {
   font-size: 2em;
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
 
+/* セクション見出し */
 h2 {
   font-size: 1.4em;
   cursor: pointer;
@@ -40,9 +41,46 @@ p, li {
   margin-bottom: 0.8em;
 }
 
+strong {
+  font-weight: bold;
+}
+
+/* 折りたたみセクション */
+.section-content {
+  display: none;
+  margin-left: 1em;
+}
+
+/* セレクトボックス */
+select {
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+/* ボタン */
+button {
+  font-size: 1em;
+  background-color: #007acc;
+  color: white;
+  padding: 0.7em 1.5em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+  transform: translateY(-1px);
+}
+
 /* ナビゲーション */
 nav {
-  margin: 1.5em 0;
+  margin: 2em 0;
 }
 
 nav a {
@@ -53,25 +91,54 @@ nav a {
   color: white;
   padding: 0.5em 1em;
   border-radius: 5px;
+  transition: background-color 0.2s ease;
 }
 
 nav a:hover {
   background-color: #005fa3;
 }
 
-/* 折りたたみセクション */
-.section-content {
-  display: none;
-  margin-left: 1em;
-}
-
 /* 画像 */
 img {
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   max-width: 100%;
   height: auto;
   margin: 1em 0;
+}
+
+/* 矢印進捗エリア */
+#arrow-progress-wrapper {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  margin: 2em auto;
+}
+
+#arrow-outline {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* 矢印上のテキスト（進捗％） */
+#progress-text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* 画像表示エリア */
+#image-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 /* リスト */
@@ -79,6 +146,18 @@ ol {
   padding-left: 1.5em;
 }
 
-strong {
-  font-weight: bold;
+/* レスポンシブ調整 */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #image-area {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

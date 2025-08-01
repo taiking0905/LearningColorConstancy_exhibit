@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
+
 <body>
   <h1>📸 AIで色補正体験</h1>
 
@@ -14,39 +15,33 @@
   <select id="sample-select" onchange="updateOriginalImage()">
     <option value="sample1">サンプル1</option>
     <option value="sample2">サンプル2</option>
-		<option value="sample3">サンプル3</option>
-		<option value="sample4">サンプル4</option>
-		<option value="sample5">サンプル5</option>
+    <option value="sample3">サンプル3</option>
+    <option value="sample4">サンプル4</option>
   </select>
 
-	<div id="image-area" style="margin-top: 20px;">
-		<img src="images/sample1_original.jpg" id="demo-image" width="400" />
-		<p id="image-caption">補正前の画像</p>
-
-		<!-- 可視化画像（処理中にだけ表示） -->
-		<img src="" id="visualization-image" width="200" style="display: none; margin-top: 10px;" />
-	</div>
-
-
-  <button onclick="startCorrection()">AIに補正してもらう</button>
-
-  <div id="progress-container" style="display: none; margin: 20px auto; width: 60%; background: #eee; border-radius: 8px; overflow: hidden;">
-    <div id="progress-bar" style="height: 20px; width: 0%; background: #4caf50; transition: width 0.1s;"></div>
-  </div>
-
-  <div id="extra-images" style="display: none; margin-top: 30px;">
-    <h3>補正結果とAIのビジュアライズ</h3>
-    <div style="display: flex; gap: 10px; justify-content: center;">
+  <div id="image-area" style="margin-top: 20px;">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
       <div>
-        <img id="corrected-image" width="250"/>
-        <p>補正後</p>
+        <img src="images/sample1_original.png" id="demo-image" width="400" />
+        <p style="text-align: center;">補正前</p>
       </div>
+
+      <div style="position: relative;">
+        <p id="progress-text">0%</p>
+        <div id="arrow-progress-wrapper">
+          <img src="images/arrow_outline.svg" id="arrow-outline" />
+          <div id="arrow-fill"></div>
+        </div>
+      </div>
+
       <div>
-        <img id="visualization-image" width="250"/>
-        <p>照明推定の可視化</p>
+        <img src="" id="corrected-image" width="400" />
+        <p style="text-align: center;">補正後</p>
       </div>
     </div>
   </div>
+
+  <button onclick="startCorrection()" style="margin-top: 20px;">AIに補正してもらう</button>
 
   <nav style="margin-top: 40px;">
     <a href="index.html">← ホームに戻る</a>

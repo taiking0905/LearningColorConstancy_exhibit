@@ -11,59 +11,39 @@ window.onload = () => {
 
 function updateOriginalImage() {
   const selected = document.getElementById("sample-select").value;
-  const img = document.getElementById("demo-image");
-  const caption = document.getElementById("image-caption");
-  const extra = document.getElementById("extra-images");
-  const progressContainer = document.getElementById("progress-container");
+  const demoImage = document.getElementById("demo-image");
+  demoImage.src = `images/${selected}_original.png`;
 
-  img.src = `images/${selected}_original.jpg`;
-  caption.textContent = "補正前の画像";
-
-  // 補正結果は非表示に戻す
-  extra.style.display = "none";
-  progressContainer.style.display = "none";
+  const corrected = document.getElementById("corrected-image");
+  corrected.src = ""; // 補正後はリセット
 }
 
+function updateOriginalImage() {
+  const selected = document.getElementById("sample-select").value;
+  const demoImage = document.getElementById("demo-image");
+  demoImage.src = `images/${selected}_original.png`;
+}
 
 function startCorrection() {
   const selected = document.getElementById("sample-select").value;
-
-  const img = document.getElementById("demo-image");
-  const caption = document.getElementById("image-caption");
-  const extra = document.getElementById("extra-images");
   const corrected = document.getElementById("corrected-image");
-  const visualization = document.getElementById("visualization-image");
-
-  const progressContainer = document.getElementById("progress-container");
-  const progressBar = document.getElementById("progress-bar");
-
-  // 初期化
-  img.src = "images/loading.gif";
-  caption.textContent = "AIが補正中...";
-  extra.style.display = "none";
-  progressContainer.style.display = "block";
-  progressBar.style.width = "0%";
-
-  // 可視化画像（処理中に表示）
-  visualization.src = `images/${selected}_original.jpg`;
-  visualization.style.display = "block";
+  const arrowFill = document.getElementById("arrow-fill");
+  const progressText = document.getElementById("progress-text");
+  
+  arrowFill.style.width = "0%";
+  progressText.textContent = "0%";
 
   let progress = 0;
   const interval = setInterval(() => {
-    progress += 3 + Math.random() * 5;
-    progressBar.style.width = Math.min(progress, 100) + "%";
+    progress += 5 + Math.random() * 5;
+    const clamped = Math.min(progress, 100);
 
-    if (progress >= 100) {
+    arrowFill.style.width = clamped + "%";
+    progressText.textContent = `${Math.floor(clamped)}%`;
+
+    if (clamped >= 100) {
       clearInterval(interval);
-
-      // 補正後の画像表示
-      img.src = `images/${selected}_original.jpg`;
-      caption.textContent = "補正された画像";
-
-      corrected.src = `images/${selected}_original.jpg`;
-      visualization.style.display = "none"; // ローディング中の可視化は終了
-      extra.style.display = "block";
-      progressContainer.style.display = "none";
+      corrected.src = `images/${selected}_corrected.png`;
     }
   }, 100);
 }
