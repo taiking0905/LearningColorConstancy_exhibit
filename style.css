@@ -6,7 +6,7 @@ body {
   color: #333;
   background-color: #fff;
   padding: 1em;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -67,7 +67,7 @@ button {
   color: white;
   padding: 0.7em 1.5em;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transition: background-color 0.2s ease, transform 0.1s ease;
@@ -146,6 +146,23 @@ ol {
   padding-left: 1.5em;
 }
 
+/* ヘッダーバー（固定進捗バー） */
+#header-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background-color: #ddd; /* グレー背景 */
+  z-index: 9999;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #00cc66; /* 明るめの緑 */
+  transition: width 0.2s ease;
+}
 /* レスポンシブ調整 */
 @media screen and (max-width: 600px) {
   body {
