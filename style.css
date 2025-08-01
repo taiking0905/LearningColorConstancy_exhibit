@@ -163,6 +163,17 @@ ol {
   background-color: #00cc66; /* 明るめの緑 */
   transition: width 0.2s ease;
 }
+
+footer {
+  border-top: 1px solid #ccc; /* 薄いグレーの線 */
+  padding-top: 1em;           /* 線とテキストの間に余白 */
+  margin-top: 3em;            /* 上との間隔 */
+  color: #777;
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 1.6;
+}
+
 /* レスポンシブ調整 */
 @media screen and (max-width: 600px) {
   body {

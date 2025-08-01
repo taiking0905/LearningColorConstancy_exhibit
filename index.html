@@ -11,10 +11,11 @@
   <h1>AIが歪んだ色を正しく直す</h1>
   <p>照明の影響で狂った画像の色を、AIが自動で補正し、本来の色へと近づけます。</p>
   <p>人間が持つ<strong>色恒常性</strong>の仕組みをAIに再現し、機械が“正しい色”を理解できるようにする研究です。</p>
+  <p>AIによる補正によって色が本来の姿に近づいた様子を、実際の画像と補正後の画像を見比べて確認してみてください。</p>
 
   <nav>
     <a href="demo.html">▶ 体験してみる</a>
-    <a href="survey.html">📝 アンケートに答える</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJsj28Ku7FIYCUwXy_Fyg3QLYs2T2rE44h1t7oRPIIjjwPaA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">📝 アンケートに答える</a>
   </nav>
 
   <h1>詳しく理解する</h1>
@@ -24,7 +25,9 @@
     <p>私たちの目は、照明が変わっても物の“本当の色”を見分けられます。</p>
     <p>これは、脳が自動的に色を補正してくれているからです。</p>
     <p>この性質を「色恒常性」と言います。</p>
-    <img src="images/example_colorconstancy.png" alt="色恒常性の図" width="800" />
+    <div align="center">
+      <img src="images/example_colorconstancy.png" alt="色恒常性の図" width="800" />
+    </div>
   </div>
 
   <h2 onclick="toggleSection(this)">色が狂うと、何が困るの？</h2>
@@ -33,8 +36,9 @@
     <p>下の画像は、黄色い照明の下で撮影されたトマトです。左側にはその一部の色（RGB値）が表示されています。</p>
     <p><strong>この左側の色だけを見て、熟しているかどうかを判断するのはとても難しいですよね。</strong></p>
     <p>実際、カメラや機械はこのような「照明の影響を受けた状態」のままで判断していることが多く、誤った判断につながってしまいます。</p>
-    
-    <img src="images/need_right_colours.png" alt="正しい色の必要性" width="800"/>
+    <div align="center">
+      <img src="images/need_right_colours.png" alt="正しい色の必要性" width="800"/>
+    </div>
 
     <p style="margin-top: 1em;">こうした問題は、<strong>色の正確な判断が必要な現場</strong>で特に深刻です。</p>
     <ul>
@@ -64,6 +68,9 @@
         <p>そのため、未知のシーンでも“それらしい色”を再現することが可能になります。</p>
       </li>
     </ul>
+    <div align="center">
+      <img src="images/robot.png" alt="ロボットの画像" width="200"/>
+    </div>
   </div>
 
   <h2 onclick="toggleSection(this)">AIはどうやって“本当の色”を知るの？</h2>
@@ -87,6 +94,7 @@
     <p style="margin-left: 1.5em;">
       AIは、色の“ゆがみ”を見抜き、それを打ち消すように補正して「ありのままの色」を再現します。
     </p>  
+    <h3>ぜひ体験して見比べてみてください</h3>
   </div>
 
   <h2 onclick="toggleSection(this)">AIはどうやって学ぶの？</h2>
@@ -98,6 +106,38 @@
       <li>新しい画像でも、見た色から照明の色を推定できるようになる。</li>
     </ol>
     <p>つまり、AIは「見え方」から「照らしている光の色」を逆算するスキルを身につけます。</p>
+    <p>このとき、照明の“正解”を正確に得るために<strong>カラーチェッカー</strong>が使われます。カラーチェッカーは、本来の色が印刷されたチャートで、照明による色のゆがみを正しく測るための基準になります。</p>
+    <div align="center">
+      <img src="images/sample4_corrected.png" alt="カラーチェッカーの画像" width="600"/>
+    </div>
   </div>
+<footer>
+  <p style="font-size: 0.8em; text-align: center; color: #777; line-height: 1.6;">
+    本サイトは非営利の研究・教育目的で運営されています。<br>
+    以下の画像およびデータは出典元の資料をもとに引用・加工して使用しています。
+    <br><br>
+    ・カラーチェッカー画像：<br>
+    <a href="https://www.psy.ritsumei.ac.jp/akitaoka/colorconstancy3.html" target="_blank" rel="noopener">
+      北岡明佳 教授（立命館大学）「色恒常性の錯視」
+    </a><br>
+
+    ・イチゴの錯視画像：<br>
+    Twitter投稿  
+    <a href="https://twitter.com/AkiyoshiKitaoka/status/836301235200131072" target="_blank" rel="noopener">
+      @AkiyoshiKitaoka（2017年2月28日）
+    </a> より一部引用・加工<br>
+
+    ・フィルター加工画像（正しい色の必要性）：<br>
+    <a href="https://unsplash.com/photos/tWb3L1T2PpE" target="_blank" rel="noopener">
+      Deniz Altindas氏（Unsplash）
+    </a> の画像を <a href="https://dotsandlines.net/colorconstancy/" target="_blank" rel="noopener">dotsandlines.net</a> から取得・加工<br>
+
+    ・AI学習用画像データ：<br>
+    <a href="https://www.cs.sfu.ca/~colour/data/shi_gehler/" target="_blank" rel="noopener">
+      Shi and Gehler Dataset（Simon Fraser University）
+    </a> を使用
+  </p>
+</footer>
+
 </body>
 </html>

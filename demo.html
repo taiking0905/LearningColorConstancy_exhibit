@@ -18,10 +18,10 @@
 
   <label for="sample-select">画像を選んでください：</label>
   <select id="sample-select" onchange="updateOriginalImage()">
-    <option value="sample1">サンプル1</option>
-    <option value="sample2">サンプル2</option>
-    <option value="sample3">サンプル3</option>
-    <option value="sample4">サンプル4</option>
+    <option value="sample1">深谷研究室の写真</option>
+    <option value="sample2">イチゴのケーキ</option>
+    <option value="sample3">実際に学習に使った画像</option>
+    <option value="sample4">カラーチェッカー</option>
   </select>
 
   <div id="image-area" style="margin-top: 20px;">
@@ -48,8 +48,13 @@
 
   <button onclick="startCorrection()" style="margin-top: 20px;">AIに補正してもらう</button>
 
+  <p style="text-align: center; font-size: 0.9em; color: gray;">
+    ※ 補正結果は今後さらに改良予定です。より自然な色を再現できるよう研究・改善を続けています。
+  </p>
+
   <nav style="margin-top: 40px;">
     <a href="index.html">← ホームに戻る</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScJsj28Ku7FIYCUwXy_Fyg3QLYs2T2rE44h1t7oRPIIjjwPaA/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">📝 アンケートに答える</a>
   </nav>
 </body>
 </html>
