@@ -1,4 +1,4 @@
-# ColorConstancy_exhibit
+# LearningColorConstancy_exhibit
 
 色恒常性の研究展示サイト。
 
