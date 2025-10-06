@@ -4,7 +4,7 @@
 
 GitHub Pages を使って公開しており、以下のリンクから閲覧できます：
 
-🔗 https://taiking0905.github.io/ColorConstancy_exhibit/
+🔗 https://taiking0905.github.io/LearningColorConstancy_exhibit/
 
 ## 概要
 
@@ -28,4 +28,4 @@ GitHub Pages を使って公開しており、以下のリンクから閲覧で�
 
 ## 研究コード
 
-🔗 https://github.com/taiking0905/ColorConstancy
+🔗 https://github.com/taiking0905/LearningColorConstancy
